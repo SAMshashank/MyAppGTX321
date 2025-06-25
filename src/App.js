@@ -20,6 +20,15 @@ const initialFileSystem={
       ]
     },
     {
+      id: 'images',
+      name: 'Images',
+      type: 'folder',
+      children: [
+        { id: 'img1', name: 'photo.jpg', type: 'file', extension: 'jpg' },
+        { id: 'img2', name: 'logo.png', type: 'file', extension: 'png' }
+      ]
+    },
+    {
       id:'projects',
       name:'Projects',
       type:'folder',
