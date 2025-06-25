@@ -1,0 +1,132 @@
+
+.file-explorer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+}
+
+.toolbar-actions button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.search-box input {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.explorer-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.tree-view {
+  width: 300px;
+  overflow-y: auto;
+  border-right: 1px solid #ddd;
+  padding: 10px;
+}
+
+.content-view {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.empty-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #999;
+}
+
+.folder-item, .file-item {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.folder-item:hover, .file-item:hover {
+  background-color: #f0f0f0;
+}
+
+.folder-item.selected, .file-item.selected {
+  background-color: #e0e0e0;
+}
+
+.folder-header {
+  display: flex;
+  align-items: center;
+}
+
+.folder-icon, .file-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.folder-icon.expanded {
+  transform: rotate(90deg);
+}
+
+.folder-contents {
+  margin-left: 15px;
+}
+
+.context-menu {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.context-menu button {
+  display: block;
+  width: 100%;
+  padding: 8px 15px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.context-menu button:hover {
+  background-color: #f0f0f0;
+}
+
+.file-viewer {
+  height: 100%;
+}
+
+.image-viewer img {
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+  margin: 0 auto;
+}
+
+.text-viewer pre {
+  white-space: pre-wrap;
+  font-family: monospace;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.default-viewer {
+  padding: 20px;
+}
