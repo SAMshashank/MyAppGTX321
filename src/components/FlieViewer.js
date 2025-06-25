@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types';
+import pre from "../assets/preview.png"
 
 {/*<img
                     src={file.content}
@@ -13,11 +15,23 @@ const FlieViewer = ({file}) => {
     if (file.content) {
       return <img src={file.content} alt={file.name} style={{ maxWidth: '100%' }} />;
     } else {
-      return <div>No image content available.</div>;
+      return <div><img src={ pre} alt={file.name} style={{ maxWidth: '10%' }} /> <p>No image content available.</p></div>;
     }
   }
   if (['pdf', 'doc', 'docx'].includes(file.extension)) {
-    return <div>Preview not supported for this file type: {file.extension}</div>;
+    return (
+      <div>
+        <h3>{file.name}</h3>
+        <div style={{ color: 'gray' }}>
+          Preview not supported for this file type: <b>{file.extension}</b>
+        </div>
+        <div>
+          <a href={file.content || '#'} download={file.name}>
+            Download file
+          </a>
+        </div>
+      </div>
+    );
   }
   // For text files
   return (
@@ -27,5 +41,13 @@ const FlieViewer = ({file}) => {
     </div>
   );
 }
+
+FlieViewer.propTypes = {
+  file: PropTypes.shape({
+    name: PropTypes.string,
+    extension: PropTypes.string,
+    content: PropTypes.string,
+  }),
+};
 
 export default FlieViewer
